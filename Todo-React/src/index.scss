@@ -20,9 +20,10 @@ body {
 
     .selector {
         display: flex;
+        gap: 10px;
         justify-content: space-between;
         margin-bottom: 30px;
-        gap: 10px;
+        
         overflow: scroll;
 
         button:hover {
@@ -76,26 +77,38 @@ body {
 
     .todos {
         margin-bottom: 30px;
+        .high {
+            border-bottom: 4px solid red;
+          }
+          .medium{
+              border-bottom: 4px solid orange;
+          }
+          .low{
+              border-bottom: 4px solid green;
+          }
+          .hide{
+            display: none;
+          }
     }
-
+    
     .todo {
         margin-bottom: 15px;
         padding: 9px;
         border: 1px solid black;
+        // border-bottom: 4px solid green;
         border-radius: 14px 0px;
         background-color: rgb(26, 26, 43);
         color: white;
-
+        
         .list {
             font-size: 20px;
             margin-bottom: 15px;
-
-            .checkbox {
-                height: 20px;
-                width: 15px;
-                border: 2px solid blue;
-                border-radius: 10px;
-            }
+            // .checkbox {
+            //     height: 20px;
+            //     width: 15px;
+            //     border: 2px solid blue;
+            //     border-radius: 10px;
+            // }
 
             label {
                 margin-left: 10px;
