@@ -5,6 +5,7 @@ import { MdOutlineDarkMode } from "react-icons/md";
 import { Link, NavLink } from 'react-router-dom'
 import {todoSelector} from '../features/todo/todoSlice'
 import { useSelector,useDispatch } from 'react-redux';
+import '../css/Actions.scss'
 
 
 const Actions = ({setAction}) => {

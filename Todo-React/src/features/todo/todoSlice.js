@@ -9,7 +9,7 @@ const initialState = {
         date: "2022-1-12",
         checked: false,
         dueDate: "2022-12-23",
-        reminder: "05:30 2022-12-12",
+        reminder: "2022-01-12T13:06",
         priority: "high"
     }, {
         id: 2,
@@ -19,7 +19,7 @@ const initialState = {
         date: "2021-12-11",
         checked: true,
         dueDate: "2022-12-23",
-        reminder: "05:30 2022-12-12",
+        reminder: "2022-12-23T13:06",
         priority: "medium"
     }, {
         id: 3,
@@ -29,7 +29,7 @@ const initialState = {
         date: "2021-12-11",
         checked: false,
         dueDate: "2022-12-23",
-        reminder: "05:30 2022-12-12",
+        reminder: "2022-12-23T13:06",
         priority: "low"
     }]
 
@@ -40,30 +40,15 @@ export const todoSlice = createSlice({
     initialState,
     reducers: {
         addTodo: (state, action) => {
-            const todo = {
-                id: Date.now(),
-                text: action.payload.text,
-                discription: action.payload.discription,
-                category: action.payload.category,
-                date: action.payload.date,
-                checked: false,
-                dueDate: action.payload.dueDate,
-                reminder: action.payload.reminder,
-                priority: action.payload.priority
-            }
             console.log("added")
-            state.Todos.push(todo)
+            state.Todos.push({...action.payload,id:Date.now(),checked:false})
             state.tempTodos = state.Todos
         },
         removeTodo: (state, action) => {
             state.Todos = state.Todos.filter((todo) => todo.id != action.payload)
         },
         updateTodo: (state, action) => {
-            const todo = {
-                id: action.payload,
-                text: action.payload
-            }
-            state.Todos = state.Todos.map((prevTodo) => (prevTodo.id == action.payload ? todo : prevTodo))
+            state.Todos = state.Todos.map((prevTodo) => (prevTodo.id == action.payload.id ? action.payload : prevTodo))
         },
         toggleCompleted: (state, action) => {
             state.Todos = state.Todos.map((prevTodo) => (prevTodo.id == action.payload) ? { ...prevTodo, checked: !prevTodo.checked } : prevTodo)
@@ -89,6 +74,10 @@ export const todoSelector = {
             todos=todos.filter((todo) =>todo.category==category)
         }
         console.log(`${actions},${category}`)
+        return todos;
+    },
+    singleTodo:(state,id)=>{
+        const todos = state.Todos.filter((todo) => todo.id == id) 
         return todos;
     }
 }

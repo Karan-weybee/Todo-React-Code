@@ -1,20 +1,24 @@
 import { MdArrowBackIosNew } from "react-icons/md";
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom'
+import Discription from "./Discription";
+import '../css/Back.scss'
 
-const Back = () => {
+const Back = ({text}) => {
     return (
         <>
             <div className="back">
                 <Link to="/">
                     <MdArrowBackIosNew className="back-icon" />
                 </Link>
-                <label htmlFor="" className="new-task">New Task</label>
+                <label htmlFor="" className="new-task">{text} Task</label>
                 <label htmlFor=""></label>
             </div>
-            <div className="discription">
-                Check Out Some New Colors. Talk With Dany About It.
-            </div>
+            {
+                text == "New"&&(
+                    <Discription/>
+                )
+            }
         </>
     );
 }

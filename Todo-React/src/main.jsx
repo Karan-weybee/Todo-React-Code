@@ -7,12 +7,10 @@ import './add.scss'
 import { Provider } from 'react-redux'
 import { store } from './app/store.js'
 import Back from './components/Back';
-import Category from './components/Category';
 import Add from './components/Add';
 import Title from './components/Title';
-import Selector from './components/Selector';
 import Todos from './components/Todos';
-import Actions from './components/Actions';
+import Edit from './components/Edit.jsx'
 
 
 const router = createBrowserRouter(
@@ -21,9 +19,11 @@ const router = createBrowserRouter(
       <Route path='' element={<><Title />
         <Todos />
         </>} />
-      <Route path='add' element={<><Back />
+      <Route path='add' element={<><Back text="New"/>
         <Add /></>} />
-
+        <Route path='edit/:id' element={<><Back text="Edit"/>
+        <Edit/>
+        </>} />
     </Route>
   ))
 ReactDOM.createRoot(document.getElementById('root')).render(

@@ -1,0 +1,166 @@
+.todos {
+    margin-bottom: 30px;
+
+    .high {
+        border-bottom: 4px solid red;
+    }
+
+    .medium {
+        border-bottom: 4px solid orange;
+    }
+
+    .low {
+        border-bottom: 4px solid green;
+    }
+
+    .hide {
+        display: none;
+    }
+}
+
+@keyframes TodoList {
+    0%   {margin-top: 70vh;}
+    100% {margin-top: 0px;}
+  }
+.todo {
+    position: relative;
+    margin-bottom: 15px;
+    padding: 9px;
+    border: 1px solid black;
+    // border-bottom: 4px solid green;
+    border-radius: 14px 0px;
+    // background-color: rgb(26, 26, 43);
+    background-color: rgb(18,18,48);
+    color: white;
+    animation-name: TodoList;
+    animation-duration: 2s;
+    transition-timing-function: linear;
+
+    .list {
+        font-size: 20px;
+        margin-bottom: 15px;
+
+        .dropup-content {
+            position: absolute;
+            right: 20%;
+            bottom: 0%;
+            display: none;
+            background-color: rgb(95, 95, 238);
+            border-radius: 10px;
+            bottom: -100px;
+            z-index: 100;
+        }
+
+        .dropup-content a {
+            border-radius: 10px;
+            font-family: Arial;
+            font-size: 16px;
+            color: white;
+            padding: 15px 17px;
+            text-decoration: none;
+            // display: block;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .dropup-content a:hover {
+            color: rgb(95, 95, 238);
+            background-color: #ccc
+        }
+
+        .more:hover  .dropup-content {
+            
+            // opacity: 0.9;
+            display: block;
+            float: right;
+        }
+
+        .more:hover  .dropbtn {
+            background-color: #2980B9;
+        }
+
+        label {
+            margin-left: 10px;
+        }
+
+        .more {
+            position: relative;
+            background: none;
+            border: 1px;
+            float: right;
+            // margin-top: 10px;
+
+            .more-icon {
+                z-index: 100;
+                fill: white;
+                height: 21px;
+                width: 26px;
+            }
+        }
+
+    }
+
+    .action {
+        margin-left: 2em;
+        font-size: 14px;
+        display: flex;
+        justify-content: space-between;
+        padding-right: 10px;
+
+        // border: 1px solid white;
+        .time {
+            display: flex;
+
+            .watch-icon {
+                height: 16px;
+                width: 23px;
+            }
+
+            .notification-icon {
+                margin-left: 12px;
+                height: 16px;
+                width: 23px;
+            }
+
+            .delete-icon {
+                margin-left: 5px;
+                fill: rgb(238, 75, 75);
+                height: 16px;
+                width: 25px;
+            }
+
+            .times {
+                border-right: 2px solid white;
+                padding-right: 13px;
+            }
+
+        }
+
+        .activity {
+            display: flex;
+            gap: 10px;
+
+            .study-icon {
+                // border: 1px solid black;
+                fill: yellow;
+                height: 17px;
+                width: 20px;
+            }
+
+            .sport-icon {
+                fill: rgb(95, 95, 238);
+                height: 17px;
+                width: 20px;
+            }
+
+            .work-icon {
+                fill: green;
+                height: 17px;
+                width: 20px;
+            }
+        }
+
+
+    }
+
+}
