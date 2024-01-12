@@ -4,9 +4,9 @@ const initialState = {
     Todos: [{
         id: 1,
         text: "Hello world",
-        discription: "hello",
+        discription: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperi eligendi necessitatibus tenetur,",
         category: "sport",
-        date: "2022-1-12",
+        date: "2022-01-12",
         checked: false,
         dueDate: "2022-12-23",
         reminder: "2022-01-12T13:06",
@@ -14,7 +14,7 @@ const initialState = {
     }, {
         id: 2,
         text: "Hello world2",
-        discription: "hello2",
+        discription: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperi eligendi necessitatibus tenetur,",
         category: "work",
         date: "2021-12-11",
         checked: true,
@@ -24,7 +24,7 @@ const initialState = {
     }, {
         id: 3,
         text: "Hello world3",
-        discription: "hello2",
+        discription: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperi eligendi necessitatibus tenetur, ",
         category: "study",
         date: "2021-12-11",
         checked: false,
@@ -58,7 +58,7 @@ export const todoSlice = createSlice({
 })
 
 export const todoSelector = {
-    filter: (state, actions, category) => {
+    filter: (state, actions, category,search,datePicker) => {
         var todos;
         if (actions == "active") {
             todos = state.Todos.filter((todo) => todo.checked == false)
@@ -73,9 +73,17 @@ export const todoSelector = {
         if(category != "all"){
             todos=todos.filter((todo) =>todo.category==category)
         }
+        if(search != ''){
+           todos=todos.filter((todo) =>todo.text.toLowerCase().includes(search.toLowerCase())!=false)
+        }
+        if(datePicker != ''){
+            todos=todos.filter((todo) =>todo.date==datePicker)
+        }
+
         console.log(`${actions},${category}`)
         return todos;
     },
+
     singleTodo:(state,id)=>{
         const todos = state.Todos.filter((todo) => todo.id == id) 
         return todos;

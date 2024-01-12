@@ -16,7 +16,7 @@ const Selector = ({setCategory}) => {
                 button.style.color = '#4223FF';
               });
 
-            e.target.style.backgroundColor = '#4223FF';
+            e.target.style.backgroundColor = 'rgb(18, 18, 48)';
             e.target.style.color = 'white';
          })
     },[]);

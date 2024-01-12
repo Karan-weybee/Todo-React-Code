@@ -1,107 +1,217 @@
-.todos {
-    margin-bottom: 30px;
+@use 'Colors';
 
-    .high {
-        border-bottom: 4px solid red;
+.filters {
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 1.5em;
+
+    .action-filter {
+        border: 1px solid Colors.$primary-colour;
+        padding: 7px;
+        border-radius: 13px;
+        display: flex;
+        gap: 10px;
+
+        .action-filter-remove {
+            background: none;
+            color: white;
+            border: none;
+        }
     }
 
-    .medium {
-        border-bottom: 4px solid orange;
-    }
+    .date-filter {
+        border: 1px solid Colors.$primary-colour;
+        padding: 7px;
+        border-radius: 13px;
+        display: flex;
+        gap: 10px;
 
-    .low {
-        border-bottom: 4px solid green;
-    }
-
-    .hide {
-        display: none;
+        .date-filter-remove {
+            background: none;
+            color: white;
+            border: none;
+        }
     }
 }
 
-@keyframes TodoList {
-    0%   {margin-top: 70vh;}
-    100% {margin-top: 0px;}
-  }
-.todo {
-    position: relative;
-    margin-bottom: 15px;
-    padding: 9px;
-    border: 1px solid black;
-    // border-bottom: 4px solid green;
-    border-radius: 14px 0px;
-    // background-color: rgb(26, 26, 43);
-    background-color: rgb(18,18,48);
-    color: white;
-    animation-name: TodoList;
-    animation-duration: 2s;
-    transition-timing-function: linear;
+.todos {
+    margin-bottom: 30px;
 
-    .list {
-        font-size: 20px;
-        margin-bottom: 15px;
+    .date{
+        .date{
+        font-size: 17.5px;
+        color: #ccc;
+        }
+    }
+    .todo-list {
+        display: flex;
+        flex-wrap: wrap;
 
-        .dropup-content {
-            position: absolute;
-            right: 20%;
-            bottom: 0%;
+        margin-bottom: 0.5em;
+        // gap: 3vw;
+
+        .high {
+            border-bottom: 4px solid red;
+        }
+
+        .medium {
+            border-bottom: 4px solid orange;
+        }
+
+        .low {
+            border-bottom: 4px solid green;
+        }
+
+        .hide {
             display: none;
-            background-color: rgb(95, 95, 238);
-            border-radius: 10px;
-            bottom: -100px;
-            z-index: 100;
         }
 
-        .dropup-content a {
-            border-radius: 10px;
-            font-family: Arial;
-            font-size: 16px;
-            color: white;
-            padding: 15px 17px;
-            text-decoration: none;
-            // display: block;
-            display: flex;
-            justify-content: space-between;
-        }
+        @keyframes TodoList {
+            0% {
+                margin-top: 70vh;
+            }
 
-        .dropup-content a:hover {
-            color: rgb(95, 95, 238);
-            background-color: #ccc
-        }
-
-        .more:hover  .dropup-content {
-            
-            // opacity: 0.9;
-            display: block;
-            float: right;
-        }
-
-        .more:hover  .dropbtn {
-            background-color: #2980B9;
-        }
-
-        label {
-            margin-left: 10px;
-        }
-
-        .more {
-            position: relative;
-            background: none;
-            border: 1px;
-            float: right;
-            // margin-top: 10px;
-
-            .more-icon {
-                z-index: 100;
-                fill: white;
-                height: 21px;
-                width: 26px;
+            100% {
+                margin-top: 0px;
             }
         }
 
+        .todo {
+            width: 100%;
+            position: relative;
+            margin-bottom: 15px;
+            padding: 9px;
+            border-radius: 14px 0px;
+            background-color: rgb(18, 18, 48);
+            color: white;
+            animation-name: TodoList;
+            animation-duration: 2s;
+            transition-timing-function: linear;
+
+            .list {
+                font-size: 20px;
+                margin-bottom: 15px;
+
+                .dropup-content {
+                    position: absolute;
+                    right: 20%;
+                    bottom: 0%;
+                    display: none;
+                    background-color: Colors.$primary-colour;
+                    border-radius: 10px;
+                    bottom: -100px;
+                    z-index: 100;
+                }
+
+                .dropup-content a {
+                    border-radius: 10px;
+                    font-family: Arial;
+                    font-size: 16px;
+                    color: white;
+                    padding: 15px 17px;
+                    text-decoration: none;
+                    // display: block;
+                    display: flex;
+                    justify-content: space-between;
+                }
+
+                .dropup-content a:hover {
+                    color: Colors.$primary-colour;
+                    background-color: #ccc
+                }
+
+                .more:hover .dropup-content {
+
+                    // opacity: 0.9;
+                    display: block;
+                    float: right;
+                }
+
+                .more:hover .dropbtn {
+                    background-color: #2980B9;
+                }
+
+                label {
+                    margin-left: 10px;
+                }
+
+                .more {
+                    position: relative;
+                    background: none;
+                    border: 1px;
+                    float: right;
+                    // margin-top: 10px;
+
+                    .more-icon {
+                        z-index: 100;
+                        fill: white;
+                        height: 21px;
+                        width: 26px;
+                    }
+                }
+
+            }
+            .discription{
+                color: #ccc;
+                font-size: 18px;
+                height: 4em;
+                width: 90%;
+                margin-left: 1.5em;
+                display: none;
+                overflow: hidden;
+            }
+        }
+        @media screen and (min-width: 762px) and (max-width: 830px) {
+            .todo{
+                width: 43%;
+                .discription{
+                    display: block;
+                }
+            }
+           
+        }
+        @media screen and (min-width: 830px) and (max-width: 1087px){
+            .todo{
+                width: 45%;
+                .discription{
+                    display: block;
+                }
+            }
+        }
+        @media screen and (min-width: 1087px) and (max-width:1450px){
+            .todo{
+                // width: 29vw;
+                width: 30%;
+                .discription{
+                    display: block;
+                }
+            }
+        }
+        @media screen and (min-width: 1450px){
+            .todo{
+                width: 22vw;
+                .discription{
+                    display: block;
+                }
+            }
+        }
+        
+    }
+    @media screen and (min-width: 830px) {
+        .todo-list{
+            gap: 1.5em;
+        }
+    }
+    @media screen and (min-width: 738px) and (max-width: 830px) {
+        .todo-list{
+            gap: 1.5em;
+        }
     }
 
     .action {
-        margin-left: 2em;
+        margin-left: 1.5em;
         font-size: 14px;
         display: flex;
         justify-content: space-between;

@@ -65,9 +65,6 @@ const Edit = () => {
                         name="meeting-time" value={reminder} onChange={(e) => setReminder(e.target.value)} required />
                 </div>
 
-                {
-                    //   document.getElementById(`${todos[0].priority}`).checked = true
-                }
                 <div className="priority">
                     <div className="high">
 

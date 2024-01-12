@@ -1,15 +1,16 @@
+@use 'Colors';
 .back{
     display: flex;
     justify-content: space-between;
     // border: 1px solid white;
     // background-color:  rgb(36, 36, 60);
     margin: 1.5em 0 2.5em 0;
-    color:  rgb(157, 157, 239);
+    color:  Colors.$primary-colour;
     border-radius: 2px;
     padding: 5px;
     
     .back-icon{
-        fill:  rgb(157, 157, 239);
+        fill:  Colors.$primary-colour;
         height: 20px;
         width: 20px;
     }

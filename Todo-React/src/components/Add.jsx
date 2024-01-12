@@ -4,6 +4,14 @@ import { useDispatch } from 'react-redux'
 import { addTodo } from '../features/todo/todoSlice'
 import '../css/Add.scss'
 import {useNavigate} from 'react-router-dom';
+
+function setTodayDate(){
+  var month = `${new Date().getMonth()+1}`;
+  if(month.length<2){
+    month = `0${month}`;
+  }
+  return `${new Date().getFullYear()}-${month}-${new Date().getDate()}`
+}
 const Add = () => {
   const [category, setCategory] = useState('');
   const [text, setText] = useState();
@@ -18,7 +26,7 @@ const Add = () => {
  const addTodoHandler = (e) => {
     e.preventDefault()
     // setInput('')
-    const date = `${new Date().getFullYear()}-${new Date().getMonth()+1}-${new Date().getDate()}`
+    const date = setTodayDate();
     var todo ={
       text: text,
       discription: discription,

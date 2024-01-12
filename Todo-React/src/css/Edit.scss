@@ -1,3 +1,4 @@
+@use 'Colors';
 .edit-main {
     color: white;
 }
@@ -5,7 +6,7 @@
 .edit-form {
     #title {
         background-color: rgb(16, 15, 15);
-        border: 3px solid rgb(157, 157, 239);
+        border: 3px solid Colors.$primary-colour;
         width: 97%;
         height: 2em;
         margin-bottom: 1em;
@@ -16,7 +17,7 @@
 
     #discription {
         background-color: rgb(16, 15, 15);
-        border: 3px solid rgb(157, 157, 239);
+        border: 3px solid Colors.$primary-colour;
         width: 97%;
         font-size: 25px;
         margin-bottom: 1em;
@@ -31,7 +32,7 @@
 
         .dueDate-title {
             font-family: Arial;
-            color: rgb(157, 157, 239);
+            color: Colors.$primary-colour;
             display: block;
             margin-bottom: 10px;
             // border: 1px solid white;
@@ -40,8 +41,8 @@
         #due-date {
             border-radius: 10px;
             // background-color: rgb(16, 15, 15);
-            color: rgb(157, 157, 239);
-            border: 3px dotted rgb(157, 157, 239);
+            color: Colors.$primary-colour;
+            border: 3px dotted Colors.$primary-colour;
             padding: 10px;
         }
 
@@ -54,13 +55,13 @@
         position: absolute;
         right: 2%;
         left: 2%;
-        bottom: 1%;
+        // bottom: 1%;
         font-size: 21px;
         border-radius: 7px;
         padding: 5px;
         // width: 100%;
         height: 3em;
-        background-color: rgb(157, 157, 239);
+        background-color: Colors.$primary-colour;
         color: white;
     }
 

@@ -1,12 +1,110 @@
+@use 'Colors';
 .Title {
     position: sticky;
     top: .12%;
-    background-color: rgb(7,7,23);
+    background-color: rgb(7, 7, 23);
     color: white;
-    border: 1px solid white;
-    display: flex;
-    justify-content: center;
+    // border: 1px solid white;
     margin-bottom: 30px;
     z-index: 100;
-}
 
+    .search {
+        width: 100%;
+        height: 46px;
+        position: relative;
+
+        .date{
+            position: absolute;
+            top: 26%;
+            right: 2%;
+
+            .date-icon{
+                height: 30px;
+                width: 30px;
+                display: none;
+            }
+
+            input[type="date"] {
+                width:0px;
+                height:30px;
+                  appearance: none;
+                  -moz-appearance: none;
+                  -webkit-appearance: none;
+                }
+            
+                /* Add a custom background and padding */
+                input[type='date'] {
+                  background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpMIfUL-NegyU-ff06_bDs0t47GrT134kSrsakDS27kh8MJALZo1MQwZG60LnrIQg7qtg&usqp=CAU') no-repeat center;
+                  padding-right: 30px; /* Adjust the padding based on your icon size */
+                  background-size: cover;
+                  border-radius: 10px;
+                }
+        }
+        @media screen and (min-width: 762px) and (max-width: 830px) {
+            .date{
+                left: 44%;
+            }
+           
+        }
+    }
+
+
+    .searchBox {
+        position: absolute;
+        top: -10%;
+        left: 40%;
+        transform: translate(-50%, 50%);
+        height: 33px;
+        border-radius: 5px;
+        display: flex;
+        justify-content: left;
+        width: 80%;
+        background-color: Colors.$secondary-colour;
+
+    }
+    @media screen and (min-width: 762px) and (max-width: 830px) {
+        
+        .searchBox{
+            left: 21%;
+            width: 39%;
+        }
+    }
+
+    .searchButton {
+        float: right;
+        width: 40px;
+        height: 33px;
+        border-radius: 5px;
+        background: Colors.$secondary-colour;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px;
+    }
+
+    .searchInput {
+        border: none;
+        background-color: Colors.$secondary-colour;
+        outline: none;
+        float: left;
+        padding: 0 6px;
+        color: rgb(194, 191, 191);
+        font-size: 16px;
+        transition: 0.4s;
+        line-height: 40px;
+        // width: 0px;
+        width: 200px;
+
+        
+
+    }
+    ::placeholder{
+        color: rgb(165, 164, 164);
+    }
+    .search-icon {
+        margin-top: 3px;
+        height: 20px;
+        width: 20px;
+        fill: rgb(165, 164, 164);
+    }
+}

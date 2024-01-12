@@ -1,7 +1,7 @@
 import React from 'react';
 import { BsFillMenuButtonFill } from "react-icons/bs";
 import { GrAdd } from "react-icons/gr";
-import { MdOutlineDarkMode } from "react-icons/md";
+import { MdDarkMode } from "react-icons/md";
 import { Link, NavLink } from 'react-router-dom'
 import {todoSelector} from '../features/todo/todoSlice'
 import { useSelector,useDispatch } from 'react-redux';
@@ -30,7 +30,7 @@ const Actions = ({setAction}) => {
                 </Link>
             </div>
             <div>
-                <MdOutlineDarkMode className='mode-icon' />
+                <MdDarkMode className='mode-icon' />
             </div>
         </div>
     );

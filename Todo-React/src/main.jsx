@@ -16,7 +16,7 @@ import Edit from './components/Edit.jsx'
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<App />}>
-      <Route path='' element={<><Title />
+      <Route path='' element={<>
         <Todos />
         </>} />
       <Route path='add' element={<><Back text="New"/>
