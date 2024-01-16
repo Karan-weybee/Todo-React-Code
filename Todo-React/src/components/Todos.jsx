@@ -8,7 +8,7 @@ import { IoNotifications } from "react-icons/io5";
 import { MdBorderBottom, MdDelete } from "react-icons/md";
 import { TfiMoreAlt } from "react-icons/tfi";
 import { useSelector, useDispatch } from 'react-redux'
-import { removeTodo,insertTodo, updateTodo, toggleCompleted } from '../features/todo/todoSlice'
+import { removeTodo, insertTodo, updateTodo, toggleCompleted } from '../features/todo/todoSlice'
 import Actions from './Actions';
 import Selector from './Selector';
 import { todoSelector } from '../features/todo/todoSlice'
@@ -61,13 +61,13 @@ function filterTodo(todos) {
     })
     return helperTodo;
 }
- function onDragOver(e){
-  e.preventDefault();
+function onDragOver(e) {
+    e.preventDefault();
 }
 
-function onDragStart(e,id,index){
-  e.dataTransfer.setData("id",id);
-  e.dataTransfer.setData("StartIndex",index);
+function onDragStart(e, id, index) {
+    e.dataTransfer.setData("id", id);
+    e.dataTransfer.setData("StartIndex", index);
 }
 
 function Todos() {
@@ -85,36 +85,36 @@ function Todos() {
     console.log(filterTodos)
     var TargetId;
 
-    function onDrop(e,key){
+    function onDrop(e, key) {
         let id = e.dataTransfer.getData("id");
         let StartIndex = e.dataTransfer.getData("StartIndex");
         console.log(TargetId)
         console.log(key)
         var singleTodo = TempTodos.filter((todo) => todo.id == id)[0];
 
-        if(key != singleTodo.date){
-        singleTodo = { ...singleTodo, date:String(key)};
-        console.log(singleTodo)
-        dispatch(updateTodo(singleTodo))
+        if (key != singleTodo.date) {
+            singleTodo = { ...singleTodo, date: String(key) };
+            console.log(singleTodo)
+            dispatch(updateTodo(singleTodo))
         }
         console.log(singleTodo)
         dispatch(removeTodo(singleTodo.id))
-        dispatch(insertTodo({TargetId,singleTodo}))
-        
+        dispatch(insertTodo({ TargetId, singleTodo }))
+
     }
-    function onDropItem(e,id){
-        TargetId=id;
+    function onDropItem(e, id) {
+        TargetId = id;
     }
 
     useEffect(() => {
         document.querySelector('.todo').classList.add('page-loaded');
-     console.log("load")
-       setTimeout(()=>{
+        console.log("load")
+        setTimeout(() => {
 
-           document.querySelector('.todo').classList.remove('page-loaded');
-       },3000)  
-       
-      }, []);
+            document.querySelector('.todo').classList.remove('page-loaded');
+        }, 3000)
+
+    }, []);
     return (
         <>
             <Title setSearch={setSearch} search={search} setDatePicker={setDatePicker} datePicker={datePicker} />
@@ -140,12 +140,12 @@ function Todos() {
                         <div className='date'>
                             <div className='date'>{formatDate(key)}</div>
                         </div>
-                        <div className="todo-list" onDragOver={(e)=>onDragOver(e)} onDrop={(e)=>onDrop(e,key)}>
-                            {filterTodos[key].map((todo,index) => (
-                                <div key={todo.id} className={`todo ${todo.priority}`} style={{ opacity: setOpacity(todo.checked) }} 
-                                onDragStart={(e)=>onDragStart(e,todo.id,index)}
-                                onDrop={(e)=>onDropItem(e,todo.id)}
-                                draggable>
+                        <div className="todo-list" onDragOver={(e) => onDragOver(e)} onDrop={(e) => onDrop(e, key)}>
+                            {filterTodos[key].map((todo, index) => (
+                                <div key={todo.id} className={`todo ${todo.priority}`} style={{ opacity: setOpacity(todo.checked) }}
+                                    onDragStart={(e) => onDragStart(e, todo.id, index)}
+                                    onDrop={(e) => onDropItem(e, todo.id)}
+                                    draggable>
                                     <div className='list'>
                                         <input type="checkbox" className='checkbox' name=""
                                             checked={todo.checked} onChange={() => dispatch(toggleCompleted(todo.id))} />
@@ -178,7 +178,12 @@ function Todos() {
                                             <IoMdStopwatch className='watch-icon' />
                                             <label htmlFor="" className='times'>{reminder(todo.reminder)}</label>
                                             <IoNotifications className='notification-icon' />
-                                            <MdDelete className='delete-icon' onClick={() => dispatch(removeTodo(todo.id))} />
+                                            <MdDelete className='delete-icon' onClick={() => {
+                                                const isDelete = confirm("Confirm To Delete Todo Item");
+                                                if (isDelete) {
+                                                    dispatch(removeTodo(todo.id))
+                                                }
+                                            }} />
                                         </label>
                                         <label htmlFor="" className='activity'>
                                             {
@@ -205,7 +210,7 @@ function Todos() {
                 ))}
 
             </div>
-           <Actions setAction={setAction}/>
+            <Actions setAction={setAction} />
         </>
     );
 }

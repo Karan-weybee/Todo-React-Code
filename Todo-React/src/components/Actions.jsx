@@ -6,7 +6,7 @@ import { Link, NavLink } from 'react-router-dom'
 import {todoSelector} from '../features/todo/todoSlice'
 import { useSelector,useDispatch } from 'react-redux';
 import '../css/Actions.scss'
-
+import AddImage from '../images/plus.png'
 
 const Actions = ({setAction}) => {
 
@@ -26,7 +26,8 @@ const Actions = ({setAction}) => {
             </div>
             <div>
                 <Link to="/add"> 
-                    <GrAdd className='add-icon' />
+                    {/* <GrAdd className='add-icon' /> */}
+                    <img src={AddImage} alt="" className='add-icon'/>
                 </Link>
             </div>
             <div>

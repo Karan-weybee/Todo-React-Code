@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import Category from './Category';
 import { useDispatch } from 'react-redux'
 import { addTodo } from '../features/todo/todoSlice'
@@ -23,7 +23,7 @@ const Add = () => {
   const [priority, setPriority] = useState();
   const [dueDate, setDueDate] = useState();
   const [reminder, setReminder] = useState();
-
+  console.log(reminder)
   const dispatch = useDispatch()
   const navigate = useNavigate();
 
@@ -42,10 +42,30 @@ const Add = () => {
     }
     console.log(todo)
     dispatch(addTodo(todo))
+
+    console.log(Math.floor((new Date(reminder) - new Date())));
+    setTimeout(showNotification,Math.floor((new Date(reminder) - new Date())));
     navigate('/');
   }
+  function showNotification() {
+    if (!("Notification" in window)) {
+      alert("This browser does not support desktop notification");
+    } else if (Notification.permission === "granted") {
 
-  
+      var notification = new Notification("Reminder For Todo Task", {
+        body: `This is a notification For your Todo Task`
+      });
+    } else if (Notification.permission !== "denied") {
+      Notification.requestPermission().then(function(permission) {
+        if (permission === "granted") {
+          var notification = new Notification("Reminder For Todo Task", {
+            body: `This is a notification For your Todo Task`
+          });
+        }
+      });
+    }
+  }
+
   return (
     <>
       <Category setCategory={setCategory} category={category} />
@@ -61,6 +81,7 @@ const Add = () => {
           <input
             type="datetime-local"
             id="remider-date"
+            min={new Date()}
             name="meeting-time" value={reminder} onChange={(e) => setReminder(e.target.value)} required/>
         </div>
         <div className="priority">

@@ -19,11 +19,9 @@ const router = createBrowserRouter(
       <Route path='' element={<>
         <Todos />
         </>} />
-      <Route path='add' element={<><Back text="New"/>
-        <Add /></>} />
-        <Route path='edit/:id' element={<><Back text="Edit"/>
-        <Edit/>
-        </>} />
+      <Route path='add'
+       element={<><Back text="New"/><Add /></>} />
+      <Route path='edit/:id' element={<><Back text="Edit"/><Edit/></>} />
     </Route>
   ))
 ReactDOM.createRoot(document.getElementById('root')).render(
