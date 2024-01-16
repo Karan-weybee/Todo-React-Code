@@ -10,7 +10,11 @@ function setTodayDate(){
   if(month.length<2){
     month = `0${month}`;
   }
-  return `${new Date().getFullYear()}-${month}-${new Date().getDate()}`
+  var date = `${new Date().getDate()}`;
+  if(date.length<2){
+    date = `0${date}`;
+  }
+  return `${new Date().getFullYear()}-${month}-${date}`
 }
 const Add = () => {
   const [category, setCategory] = useState('');

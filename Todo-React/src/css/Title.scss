@@ -40,9 +40,9 @@
                   border-radius: 10px;
                 }
         }
-        @media screen and (min-width: 762px) and (max-width: 830px) {
+        @media screen and (min-width: 762px) and (max-width: 1920px) {
             .date{
-                left: 44%;
+                left: 60%;
             }
            
         }
@@ -62,11 +62,13 @@
         background-color: Colors.$secondary-colour;
 
     }
-    @media screen and (min-width: 762px) and (max-width: 830px) {
+    @media screen and (min-width: 762px) and (max-width: 1920px) {
         
         .searchBox{
-            left: 21%;
-            width: 39%;
+            // left: 21%;
+            // width: 39%;
+            left: 27%;
+            width: 55%;
         }
     }
 

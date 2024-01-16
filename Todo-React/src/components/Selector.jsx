@@ -12,8 +12,8 @@ const Selector = ({setCategory}) => {
             e.preventDefault();
             console.log(e.target)
             document.querySelectorAll('.btn').forEach(button => {
-                button.style.backgroundColor = 'white';
-                button.style.color = '#4223FF';
+                button.style.backgroundColor = 'white'; 
+                button.style.color = 'rgb(18, 18, 48)';
               });
 
             e.target.style.backgroundColor = 'rgb(18, 18, 48)';

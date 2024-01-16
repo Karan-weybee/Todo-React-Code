@@ -1,16 +1,19 @@
 @use 'Colors';
 .actions {
-    width: 97%;
+    // width: 97%;
+    width: 87%;
     opacity: 999;
-    background-color: rgb(16, 15, 15);
+    // background-color: rgb(16, 15, 15);
+    background-color: white;
     z-index: 100;
     position: fixed;
     display: flex;
     align-items: center;
-    // border: 1px solid white;
     justify-content: space-around;
     padding: 0 0px 0 0px;
-    bottom: .1%;
+    bottom: 1.1%;
+    right: 6.5%;
+    border-radius: 35px;
     color: white;
 
     .menu:hover {
@@ -24,20 +27,32 @@
             fill: Colors.$primary-colour;
             height: 30px;
             width: 30px;
+            margin-top: 10px
         }
 
 
         .dropbtn {
             background: none;
-            padding: 16px;
+            // padding: 16px;
             font-size: 16px;
             border: none;
         }
-
+        @media screen and (min-width: 762px) and (max-width: 1920px) {
+            .dropbtn {
+                padding: 0px;
+                padding-top: 2px;
+            }
+            .menu-icon {
+                height: 27px;
+                width: 29px;
+            }
+           
+        }
 
         .dropdown-content {
             display: none;
-            top: -192%;
+            // top: -192%;
+            top: -217%;
             // left: 0%;
             position: absolute;
             background-color: rgba(Colors.$primary-colour, 0.97);
@@ -45,6 +60,12 @@
             min-width: 160px;
             box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
             z-index: 1;
+        }
+        @media screen and (min-width: 762px) and (max-width: 1920px) {
+            .dropdown-content {
+                top: 74%;
+            }
+           
         }
 
         .dropdown-content a {
@@ -66,11 +87,12 @@
     .add-icon {
         // border: 4px solid rgb(223, 123, 9);
         background-color: rgb(223, 123, 9);
-        box-shadow: 0px 0px 30px rgb(223, 123, 9);
+        // box-shadow: 0px 0px 30px rgb(223, 123, 9);
         border-radius: 15px;
         padding: 7px;
         height: 30px;
         width: 30px;
+        margin-top: 8.5px
     }
 
     .mode-icon {
@@ -82,5 +104,116 @@
         border: 1px solid white;
         height: 30px;
         width: 30px;
+        margin-top: 8px
     }
+    @media screen and (min-width: 762px) and (max-width: 1920px) {
+        .add-icon {
+            height: 24px;
+            width: 29px;
+        }
+        .mode-icon {
+           
+            height: 23px;
+            width: 26px;
+        }
+       
+    }
+
+}
+@media screen and (min-width: 1332px) and (max-width: 1920px) {
+    .actions {
+        width: 0;
+        opacity: 999;
+        background-color: rgb(16, 15, 15);
+        z-index: 100;
+        position: fixed;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        padding: 0 0px 0 0px;
+        bottom: 91%;
+        top: 0%;
+        gap: 2.1em;
+        // right: 18%;
+        color: white;
+        left: 72%;
+    }}
+@media screen and (min-width: 1112px) and (max-width: 1332px) {
+    .actions {
+        width: 0;
+        opacity: 999;
+        background-color: rgb(16, 15, 15);
+        z-index: 100;
+        position: fixed;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        padding: 0 0px 0 0px;
+        bottom: 91%;
+        top: 0%;
+        gap: 2.1em;
+        // right: 18%;
+        color: white;
+        left: 75%;
+    }}
+@media screen and (min-width: 1024px) and (max-width: 1112px) {
+    .actions {
+        width: 0;
+        opacity: 999;
+        background-color: rgb(16, 15, 15);
+        z-index: 100;
+        position: fixed;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        padding: 0 0px 0 0px;
+        bottom: 91%;
+        top: 0%;
+        gap: 2.1em;
+        // right: 18%;
+        color: white;
+        left: 75%;
+    }
+}
+    @media screen and (min-width: 944px) and (max-width:1024px) {
+        .actions {
+            width: 0;
+            opacity: 999;
+            background-color: rgb(16, 15, 15);
+            z-index: 100;
+            position: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 0 0px 0 0px;
+            bottom: 91%;
+            top: 0%;
+            gap: 2.1em;
+            // right: 18%;
+            color: white;
+            left: 77%;
+
+        }}
+    @media screen and (min-width: 762px) and (max-width:944px) {
+    .actions {
+        width: 0;
+        opacity: 999;
+        background-color: rgb(16, 15, 15);
+        z-index: 100;
+        position: fixed;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        padding: 0 0px 0 0px;
+        bottom: 91%;
+        top: 0%;
+        gap: 2.1em;
+        // right: 18%;
+        left: 79%;
+        color: white;
+    }
+    @media screen and (min-width: 762px) and (max-width:822px) {
+        .actions {  left: 80%;}
+    }
+    
 }

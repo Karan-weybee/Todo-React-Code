@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
     Todos: [{
-        id: 1,
+        id: '1',
         text: "Hello world",
         discription: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperi eligendi necessitatibus tenetur,",
         category: "sport",
@@ -12,7 +12,7 @@ const initialState = {
         reminder: "2022-01-12T13:06",
         priority: "high"
     }, {
-        id: 2,
+        id: '2',
         text: "Hello world2",
         discription: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperi eligendi necessitatibus tenetur,",
         category: "work",
@@ -22,7 +22,7 @@ const initialState = {
         reminder: "2022-12-23T13:06",
         priority: "medium"
     }, {
-        id: 3,
+        id: '3',
         text: "Hello world3",
         discription: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperi eligendi necessitatibus tenetur, ",
         category: "study",
@@ -53,6 +53,14 @@ export const todoSlice = createSlice({
         toggleCompleted: (state, action) => {
             state.Todos = state.Todos.map((prevTodo) => (prevTodo.id == action.payload) ? { ...prevTodo, checked: !prevTodo.checked } : prevTodo)
             console.log("toggle")
+        },
+        insertTodo:(state,action)=>{
+            console.log("insert")
+            const index =  state.Todos.findIndex(todo => todo.id == action.payload.TargetId);
+            console.log(index)
+            console.log(action.payload.singleTodo)
+            state.Todos.splice(index, 0,action.payload.singleTodo);
+           
         }
     }
 })
@@ -90,6 +98,6 @@ export const todoSelector = {
     }
 }
 
-export const { addTodo, removeTodo, updateTodo, toggleCompleted } = todoSlice.actions
+export const { addTodo,insertTodo, removeTodo, updateTodo, toggleCompleted } = todoSlice.actions
 
 export default todoSlice.reducer

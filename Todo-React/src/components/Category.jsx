@@ -22,6 +22,7 @@ const Category = ({ setCategory,category }) => {
          })
 
          if(category == null || category == ''){
+            setCategory('study')
             document.querySelectorAll('.btn')[0].style.backgroundColor="#4223FF";
             document.querySelectorAll('.btn')[0].style.color="white";
          }
