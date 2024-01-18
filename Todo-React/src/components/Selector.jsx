@@ -12,7 +12,7 @@ const Selector = ({setCategory}) => {
             e.preventDefault();
             console.log(e.target)
             document.querySelectorAll('.btn').forEach(button => {
-                button.style.backgroundColor = 'white'; 
+                button.style.backgroundColor = '#efefef'; 
                 button.style.color = 'black';
               });
 

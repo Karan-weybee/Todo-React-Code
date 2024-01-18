@@ -13,7 +13,7 @@ const Category = ({ setCategory,category }) => {
             e.preventDefault();
             
             document.querySelectorAll('.btn').forEach(button => {
-                button.style.backgroundColor = 'white';
+                button.style.backgroundColor = '#efefef';
                 button.style.color = '#4223FF';
               });
 
