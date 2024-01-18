@@ -4,14 +4,14 @@
     width: 87%;
     opacity: 999;
     box-shadow: 0 0 10px white;
-    background-color: white;
+    background-color: Colors.$secondary-colour;
     z-index: 100;
     position: fixed;
     display: flex;
     align-items: center;
     justify-content: space-around;
     padding: 0 0px 0 0px;
-    bottom: 1.1%;
+    bottom: 1.7%;
     right: 6.5%;
     border-radius: 35px;
     color: white;
@@ -27,7 +27,8 @@
             fill: Colors.$primary-colour;
             height: 30px;
             width: 30px;
-            margin-top: 10px
+            margin-top: 10px;
+            
         }
 
 
@@ -43,8 +44,8 @@
                 padding-top: 2px;
             }
             .menu-icon {
-                height: 27px;
-                width: 29px;
+                height: 40px;
+                width: 33px;
             }
            
         }
@@ -85,9 +86,6 @@
     }
 
     .add-icon {
-        // border: 4px solid rgb(223, 123, 9);
-        // background-color: rgb(223, 123, 9);
-        // box-shadow: 0px 0px 30px rgb(223, 123, 9);
         border-radius: 15px;
         // padding: 7px;
         height: 39px;
@@ -98,33 +96,35 @@
     .mode-icon {
         padding: 7px;
         border-radius: 10px;
-        // fill: rgb(243, 243, 246);
-        // fill: black;
-        background-color: black;
-        border: 1px solid white;
+        fill: Colors.$white;
+        background-color: Colors.$dark;
+        border: 1px solid Colors.$white;
         height: 27px;
         width: 25px;
         margin-top: 5.5px
     }
     @media screen and (min-width: 762px) and (max-width: 1920px) {
         .add-icon {
-            height: 24px;
-            width: 29px;
+            // height: 24px;
+            // width: 29px;
+            height: 35px;
+            width: 38px;
+            margin-top: 10px;
         }
         .mode-icon {
-           
-            height: 23px;
-            width: 26px;
+           margin-top: 10px;
+            height: 19px;
+            width: 22px;
         }
        
     }
 
 }
-@media screen and (min-width: 1332px) and (max-width: 1920px) {
+@media screen and (min-width: 1600px) and (max-width: 1920px) {
     .actions {
         width: 0;
         opacity: 999;
-        background-color: rgb(16, 15, 15);
+        background-color: Colors.$secondary-colour;
         z-index: 100;
         position: fixed;
         display: flex;
@@ -132,7 +132,25 @@
         justify-content: space-around;
         padding: 0 0px 0 0px;
         bottom: 91%;
-        top: -2.75%;
+        top: -1.5%;
+        gap: 2.1em;
+        // right: 18%;
+        color: white;
+        left: 69%;
+    }}
+@media screen and (min-width: 1332px) and (max-width: 1600px) {
+    .actions {
+        width: 0;
+        opacity: 999;
+        background-color: Colors.$secondary-colour;
+        z-index: 100;
+        position: fixed;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        padding: 0 0px 0 0px;
+        bottom: 91%;
+        top: -1.5%;
         gap: 2.1em;
         // right: 18%;
         color: white;
@@ -142,7 +160,7 @@
     .actions {
         width: 0;
         opacity: 999;
-        background-color: rgb(16, 15, 15);
+        background-color: Colors.$secondary-colour;
         z-index: 100;
         position: fixed;
         display: flex;
@@ -150,17 +168,16 @@
         justify-content: space-around;
         padding: 0 0px 0 0px;
         bottom: 91%;
-        top: -2.75%;
+        top: -1.5%;
         gap: 2.1em;
-        // right: 18%;
         color: white;
-        left: 75%;
+        left: 73.5%;
     }}
 @media screen and (min-width: 1024px) and (max-width: 1112px) {
     .actions {
         width: 0;
         opacity: 999;
-        background-color: rgb(16, 15, 15);
+        background-color: Colors.$secondary-colour;
         z-index: 100;
         position: fixed;
         display: flex;
@@ -168,7 +185,7 @@
         justify-content: space-around;
         padding: 0 0px 0 0px;
         bottom: 91%;
-        top: -2.75%;
+        top: -1%;
         gap: 2.1em;
         // right: 18%;
         color: white;
@@ -179,7 +196,7 @@
         .actions {
             width: 0;
             opacity: 999;
-            background-color: rgb(16, 15, 15);
+            background-color: Colors.$secondary-colour;
             z-index: 100;
             position: fixed;
             display: flex;
@@ -187,7 +204,7 @@
             justify-content: space-around;
             padding: 0 0px 0 0px;
             bottom: 91%;
-            top: -2%;
+            top: -1%;
             gap: 2.1em;
             // right: 18%;
             color: white;
@@ -198,7 +215,7 @@
     .actions {
         width: 0;
         opacity: 999;
-        background-color: rgb(16, 15, 15);
+        background-color: Colors.$secondary-colour;
         z-index: 100;
         position: fixed;
         display: flex;
@@ -206,7 +223,7 @@
         justify-content: space-around;
         padding: 0 0px 0 0px;
         bottom: 91%;
-        top: -2%;
+        top: -1%;
         gap: 2.1em;
         // right: 18%;
         left: 79%;

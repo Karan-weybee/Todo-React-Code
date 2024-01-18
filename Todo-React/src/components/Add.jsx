@@ -67,7 +67,7 @@ const Add = () => {
   }
 
   return (
-    <>
+    <div className='add-section'>
       <Category setCategory={setCategory} category={category} />
       <form className='add-form' onSubmit={addTodoHandler}>
         <input type="text" name="Title" id="title" placeholder='Enter The Title' value={text} onChange={(e) => setText(e.target.value)} maxlength="25" required/>
@@ -97,7 +97,7 @@ const Add = () => {
         </div>
         <button type="submit" id="add-task">Add Task</button>
       </form>
-    </>
+    </div>
   );
 }
 

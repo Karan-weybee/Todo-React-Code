@@ -1,8 +1,16 @@
-body {
-    // background-color: white;
-    background-color: rgb(7,7,23);
-}
+:root {
+    --primary-colour: rgb(124, 124, 229);
+    --secondary-colour: rgb(18, 18, 48);
+    --aquablue: aliceblue;
 
+    --dark: rgb(7, 7, 23);
+    --white: white;
+    --ccc:#ccc;
+}
+body {
+    // background-color: rgb(7,7,23);
+    background-color:rgb(7, 7, 23);
+}
 .main {
     // background-color: rgb(116, 86, 86);
     width: 100%;
@@ -10,7 +18,7 @@ body {
     justify-content: center;
     font-family: arial;
 
- 
+
 
     .date {
         // color: white;
@@ -18,6 +26,6 @@ body {
         margin-bottom: 10px;
     }
 
-    
+
 
 }

@@ -1,3 +1,4 @@
+@use './Colors';
 .selector {
     display: flex;
     gap: 15px;
@@ -7,8 +8,8 @@
     padding-bottom: 10px;
 
     button:active {
-        background-color: rgb(18, 18, 48);
-        color: white;
+        background-color: Colors.$secondary-colour;
+        color: Colors.$white;
     }
 
     button {
@@ -23,10 +24,10 @@
     }
 
     .all {
-        border: 1px solid rgb(18, 18, 48);
-        background-color: rgb(18, 18, 48);
+        border: 1px solid Colors.$secondary-colour;
+        background-color: Colors.$secondary-colour;
         border-radius: 5px;
-        color: white;
+        color: Colors.$white;
     }
 
     .study-icon {

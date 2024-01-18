@@ -2,8 +2,8 @@
 .Title {
     position: sticky;
     top: .12%;
-    background-color: rgb(7, 7, 23);
-    color: white;
+    background-color: Colors.$dark;
+    color: Colors.$white;
     // border: 1px solid white;
     margin-bottom: 30px;
     z-index: 100;
@@ -67,7 +67,7 @@
         .searchBox{
             // left: 21%;
             // width: 39%;
-            left: 27%;
+            left: 27.5%;
             width: 55%;
         }
     }
@@ -92,7 +92,6 @@
         padding: 0 6px;
         color: rgb(194, 191, 191);
         font-size: 16px;
-        transition: 0.4s;
         line-height: 40px;
         // width: 0px;
         width: 200px;

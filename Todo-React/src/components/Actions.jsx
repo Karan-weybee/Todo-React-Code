@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BsFillMenuButtonFill } from "react-icons/bs";
 import { GrAdd } from "react-icons/gr";
 import { MdDarkMode } from "react-icons/md";
@@ -8,11 +8,32 @@ import { useSelector,useDispatch } from 'react-redux';
 import '../css/Actions.scss'
 import AddImage from '../images/plus.png'
 
+
 const Actions = ({setAction}) => {
 
-    // const xyz = useSelector((state)=>todoSelector.filter(state,"all"))
-
-    // console.log(xyz)
+    const [mode,setMode]=useState('dark');
+ 
+    function changeMode(){
+        console.log("change mode")
+        if(mode == 'dark'){
+            setMode('white')
+            root.style.setProperty('--white','rgb(7, 7, 23)');
+            root.style.setProperty('--dark','white');
+            root.style.setProperty('--aquablue','rgb(18, 18, 48)');
+            root.style.setProperty('--secondary-colour','aliceblue');
+            root.style.setProperty('--ccc','#a79d9d');
+            document.querySelector('body').style.backgroundColor='white'
+        }
+        else{
+            setMode('dark')
+            root.style.setProperty('--white','white');
+            root.style.setProperty('--dark','rgb(7, 7, 23)');
+            root.style.setProperty('--aquablue','aliceblue');
+            root.style.setProperty('--secondary-colour','rgb(18, 18, 48)');
+            root.style.setProperty('--ccc','#ccc');
+            document.querySelector('body').style.backgroundColor='rgb(7, 7, 23)'
+        }
+    }
     return (
         <div className="actions">
             <div className="menu">
@@ -30,7 +51,7 @@ const Actions = ({setAction}) => {
                     <img src={AddImage} alt="" className='add-icon'/>
                 </Link>
             </div>
-            <div>
+            <div id='change-mode' onClick={changeMode}>
                 <MdDarkMode className='mode-icon' />
             </div>
         </div>

@@ -1,7 +1,8 @@
 @use 'Colors';
 
+
 .filters {
-    color: white;
+    color: Colors.$white;
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
@@ -13,10 +14,10 @@
         border-radius: 13px;
         display: flex;
         gap: 10px;
-
+        background-color: Colors.$secondary-colour;
         .action-filter-remove {
             background: none;
-            color: white;
+            color: Colors.$white;
             border: none;
         }
     }
@@ -27,10 +28,10 @@
         border-radius: 13px;
         display: flex;
         gap: 10px;
-
+        background-color: Colors.$secondary-colour;
         .date-filter-remove {
             background: none;
-            color: white;
+            color: Colors.$white;
             border: none;
         }
     }
@@ -42,7 +43,7 @@
     .date{
         .date{
         font-size: 17.5px;
-        color: #ccc;
+        color: Colors.$ccc;
         }
     }
     .todo-list {
@@ -88,8 +89,8 @@
             margin-bottom: 15px;
             padding: 9px;
             border-radius: 14px 0px;
-            background-color: rgb(18, 18, 48);
-            color: white;
+            background-color: Colors.$secondary-colour;
+            color: Colors.$white;
            
 
             .list {
@@ -121,7 +122,7 @@
 
                 .dropup-content a:hover {
                     color: Colors.$primary-colour;
-                    background-color: #ccc
+                    background-color: Colors.$ccc
                 }
 
                 .more:hover .dropup-content {
@@ -148,7 +149,7 @@
 
                     .more-icon {
                         z-index: 100;
-                        fill: white;
+                        fill: Colors.$white;
                         height: 21px;
                         width: 26px;
                     }
@@ -156,7 +157,7 @@
 
             }
             .discription{
-                color: #ccc;
+                color: Colors.$ccc;
                 font-size: 18px;
                 height: 4em;
                 width: 90%;
@@ -242,7 +243,7 @@
             }
 
             .times {
-                border-right: 2px solid white;
+                border-right: 2px solid Colors.$white;
                 padding-right: 13px;
             }
 

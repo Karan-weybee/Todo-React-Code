@@ -1,2 +1,10 @@
+
 $primary-colour: rgb(124, 124, 229);
-$secondary-colour: rgb(18, 18, 48);
+
+$secondary-colour: var(--secondary-colour);
+$aquablue:var(--aquablue);
+
+$dark:var(--dark);
+$white:var(--white);
+
+$ccc:var(--ccc)

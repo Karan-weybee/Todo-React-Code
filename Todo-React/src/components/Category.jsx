@@ -23,17 +23,17 @@ const Category = ({ setCategory,category }) => {
 
          if(category == null || category == ''){
             setCategory('study')
-            document.querySelectorAll('.btn')[0].style.backgroundColor="#4223FF";
+            document.querySelectorAll('.btn')[0].style.backgroundColor='var(--primary-colour)';
             document.querySelectorAll('.btn')[0].style.color="white";
          }
          else{
-         document.getElementsByClassName(category)[0].style.backgroundColor="#4223FF";
+         document.getElementsByClassName(category)[0].style.backgroundColor='var(--primary-colour)';
          document.getElementsByClassName(category)[0].style.color="white";
         }
     },[]);
 
     return (
-        <>
+        <div className='category-section'>
             <label htmlFor="" className='category-title'>Choose Category</label>
             <div className='selector' id='selector'>
                 <button className='study btn' onClick={() => { setCategory("study") }}>
@@ -44,7 +44,7 @@ const Category = ({ setCategory,category }) => {
                 <button className='work btn' onClick={() => { setCategory("work") }}>
                     <FaLaptopCode className='work-icon' />Work</button>
             </div>
-        </>
+        </div>
     );
 }
 

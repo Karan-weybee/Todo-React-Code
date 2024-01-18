@@ -19,9 +19,21 @@
     }
 
 }
+@media screen and (min-width: 1063px) and (max-width:2000px) {
+    .back{
+        width:calc(100% - 2.5em);
+        margin: 1.5em 0 2.5em 2.5em;
+    }
+}
 .discription{
     font-size: 20px;
-    color:white;
+    color:Colors.$white;
     margin-bottom: 2em;
+}
+@media screen and (min-width: 1063px) and (max-width:2000px) {
+    .discription{
+        // width: calc(100%-2.5em);
+        margin-left:2.5em;
+    }
 }
 

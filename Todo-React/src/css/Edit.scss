@@ -1,27 +1,39 @@
 @use 'Colors';
+
+@media screen and (min-width: 1063px) and (max-width:2000px) {
+
+    .edit-section {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin: 5em;
+    }
+
+}
+
 .edit-main {
     color: white;
 }
 
 .edit-form {
     #title {
-        background-color: rgb(16, 15, 15);
+        background-color: Colors.$secondary-colour;
         border: 3px solid Colors.$primary-colour;
         width: 97%;
         height: 2em;
         margin-bottom: 1em;
         margin-top: 0.5em;
         font-size: 20px;
-        color: white;
+        color: Colors.$white;
     }
 
     #discription {
-        background-color: rgb(16, 15, 15);
+        background-color: Colors.$secondary-colour;
         border: 3px solid Colors.$primary-colour;
         width: 97%;
         font-size: 25px;
         margin-bottom: 1em;
-        color: white;
+        color: Colors.$white;
     }
 
     .dueDate-remider {
@@ -65,12 +77,20 @@
         color: white;
     }
 
+    @media screen and (min-width: 1063px) and (max-width:2000px) {
+        #edit-task {
+            position: absolute;
+            right: 6%;
+            left: 37%;
+        }
+    }
     .priority {
         color: white;
         font-size: 20px;
         margin-bottom: 1em;
         display: flex;
         justify-content: space-around;
+
         .high,
         .medium,
         .low {
@@ -95,4 +115,10 @@
             background-color: green;
         }
     }
+}
+@media screen and (min-width: 1063px) and (max-width:2000px) {
+    .edit-form {
+        width: 65%;
+   
+}
 }

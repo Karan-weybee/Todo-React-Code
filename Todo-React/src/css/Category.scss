@@ -1,0 +1,13 @@
+@use './Colors';
+@media screen and (min-width: 1063px) and (max-width:2000px) {
+.category-section{
+    width: 25%;
+    border-radius: 10px;
+    background: Colors.$secondary-colour;
+    border: 1px solid Colors.$secondary-colour;
+    padding: 1em;
+}
+.selector {
+    flex-wrap: wrap;
+}
+}

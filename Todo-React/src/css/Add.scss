@@ -1,24 +1,40 @@
 @use 'Colors';
+
+@media screen and (min-width: 1063px) and (max-width:2000px) {
+  
+.add-section{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    // margin: 5em;
+}
 .add-form{
+    border-radius: 10px;
+    background: Colors.$dark;
+    padding: 1em;
+    // border: 1px solid white;
+}
+}
+.add-form{  
     position: relative;
     bottom: 0%;
     #title{
-        background-color :rgb(16, 15, 15); 
+        background-color :Colors.$secondary-colour; 
         border: 3px solid Colors.$primary-colour;
         width: 97%;
         height: 2em;
         margin-bottom: 1em;
         margin-top: 0.5em;
         font-size: 20px;
-        color: white;
+        color: Colors.$white;
     }
     #discription{
-        background-color :rgb(16, 15, 15); 
+        background-color :Colors.$secondary-colour; 
         border: 3px solid  Colors.$primary-colour;
         width: 97%;
         font-size: 25px;
         margin-bottom: 1em;
-        color: white;
+        color: Colors.$white;
     }
     .dueDate-remider{
         display: grid;

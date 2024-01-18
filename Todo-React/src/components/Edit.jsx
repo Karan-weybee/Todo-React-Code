@@ -48,7 +48,7 @@ const Edit = () => {
         navigate('/');
     }
     return (
-        <>
+        <div className='edit-section'>
             <Category setCategory={setCategory} category={category} />
             <form className='edit-form' onSubmit={editTodoHandler}>
                 <input type="text" name="Title" id="title" placeholder='Enter The Title' value={text} onChange={(e) => setText(e.target.value)} maxlength="25" required />
@@ -85,7 +85,7 @@ const Edit = () => {
                 </div>
                 <button type="submit" id="edit-task">Edit Task</button>
             </form>
-        </>
+        </div>
     );
 }
 
